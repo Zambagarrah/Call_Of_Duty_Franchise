@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Container } from "./Container";
+import { ParallaxImage } from "./ParallaxImage";
 import { cn } from "@/lib/utils";
 
 interface PageHeroProps {
@@ -24,15 +24,11 @@ export function PageHero({
     <div className={cn("relative overflow-hidden border-b border-border-subtle bg-background-elevated", className)}>
       {image ? (
         <>
-          <Image
+          <ParallaxImage
             src={image}
-            alt=""
-            fill
             priority
-            sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: imagePosition }}
-            className="pointer-events-none absolute inset-0 opacity-45 grayscale-[20%]"
-            aria-hidden
+            imagePosition={imagePosition}
+            className="opacity-45 grayscale-[20%]"
           />
           <div
             className="pointer-events-none absolute inset-0"

@@ -3,6 +3,8 @@ import { AlertTriangle, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { Badge } from "@/components/Badge";
+import { ImageBand } from "@/components/ImageBand";
+import { Reveal } from "@/components/Reveal";
 import { futureEntries } from "@/data/future";
 import { cn } from "@/lib/utils";
 
@@ -32,7 +34,7 @@ export default function FuturePage() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-6">
+        <Reveal className="flex flex-col gap-6">
           {futureEntries.map((entry) => (
             <article
               key={entry.id}
@@ -71,8 +73,14 @@ export default function FuturePage() {
               </ul>
             </article>
           ))}
-        </div>
+        </Reveal>
       </Container>
+      <ImageBand
+        image="/images/band-future.jpg"
+        imagePosition="center 40%"
+        eyebrow="What comes next"
+        quote="Confirmed roadmaps and industry rumors, clearly told apart."
+      />
     </div>
   );
 }

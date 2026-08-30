@@ -1,14 +1,22 @@
+"use client";
+
 import Link from "next/link";
 import { Gamepad2 } from "lucide-react";
 import type { Game } from "@/data/types";
 import { Badge } from "./Badge";
 import { cn, seriesBadgeClasses, typeLabel } from "@/lib/utils";
+import { useTilt } from "@/hooks/useTilt";
 
 export function GameCard({ game }: { game: Game }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt<HTMLAnchorElement>();
+
   return (
     <Link
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
       href={`/games/${game.slug}`}
-      className="group flex flex-col overflow-hidden rounded-sm border border-border-subtle bg-surface transition-colors hover:border-accent/50 hover:bg-surface-hover"
+      className="tilt group flex flex-col overflow-hidden rounded-sm border border-border-subtle bg-surface transition-colors hover:border-accent/50 hover:bg-surface-hover"
     >
       <div
         className={cn(

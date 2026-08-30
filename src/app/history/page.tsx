@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
+import { ImageBand } from "@/components/ImageBand";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "History",
@@ -95,41 +97,20 @@ export default function HistoryPage() {
 
       <Container className="py-12 sm:py-16">
         <div className="flex flex-col">
-          {ERAS.map((era, index) => (
-            <section
-              key={era.number}
-              className={
-                index % 2 === 1
-                  ? "border-y border-border-subtle bg-background-elevated py-10 sm:py-12"
-                  : "py-10 sm:py-12"
-              }
-            >
-              <div className="grid grid-cols-1 gap-6 lg:grid-cols-[auto_1fr]">
-                <div className="flex items-start gap-4 lg:w-48 lg:flex-col lg:gap-1">
-                  <span className="font-display text-4xl font-bold text-accent/30">
-                    {era.number}
-                  </span>
-                  <div>
-                    <p className="font-mono text-xs font-semibold tracking-widest text-accent uppercase">
-                      {era.years}
-                    </p>
-                  </div>
-                </div>
-                <div className="max-w-3xl">
-                  <h2 className="font-display text-2xl font-semibold tracking-wide text-foreground uppercase sm:text-3xl">
-                    {era.title}
-                  </h2>
-                  <div className="mt-4 flex flex-col gap-4">
-                    {era.paragraphs.map((p, i) => (
-                      <p key={i} className="leading-relaxed text-muted">
-                        {p}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          ))}
+          {ERAS.slice(0, 3).map((era, index) => renderEra(era, index))}
+        </div>
+      </Container>
+
+      <ImageBand
+        image="/images/band-history.jpg"
+        imagePosition="center 35%"
+        eyebrow="Two decades of records"
+        quote="From a single WWII shooter to a live-service ecosystem spanning consoles, PC, and mobile."
+      />
+
+      <Container className="py-12 sm:py-16">
+        <div className="flex flex-col">
+          {ERAS.slice(3).map((era, index) => renderEra(era, index + 3))}
         </div>
 
         <div className="mt-4 flex flex-col items-start gap-3 border-t border-border-subtle pt-10 sm:flex-row sm:items-center sm:justify-between">
@@ -145,5 +126,41 @@ export default function HistoryPage() {
         </div>
       </Container>
     </div>
+  );
+}
+
+function renderEra(era: Era, index: number) {
+  return (
+    <section
+      key={era.number}
+      className={
+        index % 2 === 1
+          ? "border-y border-border-subtle bg-background-elevated py-10 sm:py-12"
+          : "py-10 sm:py-12"
+      }
+    >
+      <Reveal className="grid grid-cols-1 gap-6 lg:grid-cols-[auto_1fr]">
+        <div className="flex items-start gap-4 lg:w-48 lg:flex-col lg:gap-1">
+          <span className="font-display text-4xl font-bold text-accent/30">{era.number}</span>
+          <div>
+            <p className="font-mono text-xs font-semibold tracking-widest text-accent uppercase">
+              {era.years}
+            </p>
+          </div>
+        </div>
+        <div className="max-w-3xl">
+          <h2 className="font-display text-2xl font-semibold tracking-wide text-foreground uppercase sm:text-3xl">
+            {era.title}
+          </h2>
+          <div className="mt-4 flex flex-col gap-4">
+            {era.paragraphs.map((p, i) => (
+              <p key={i} className="leading-relaxed text-muted">
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+    </section>
   );
 }

@@ -50,6 +50,15 @@ export function Footer() {
             >
               Pexels
             </a>{" "}
+            and{" "}
+            <a
+              href="https://openverse.org/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="underline decoration-dotted underline-offset-2 hover:text-foreground"
+            >
+              Openverse
+            </a>{" "}
             — generic military/tactical photography, not Call of Duty artwork or screenshots.
           </p>
         </div>

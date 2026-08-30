@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { TimelineCategory, TimelineEvent } from "@/data/types";
+import { Reveal } from "./Reveal";
 import { cn, timelineCategoryClasses, timelineCategoryLabel } from "@/lib/utils";
 
 const CATEGORIES: TimelineCategory[] = ["release", "studio", "business", "esports", "technology"];
@@ -47,7 +48,7 @@ export function TimelineList({ events }: { events: TimelineEvent[] }) {
         ))}
       </div>
 
-      <ol className="relative flex flex-col gap-6 border-l border-border-subtle pl-6 sm:pl-8">
+      <Reveal as="ol" className="relative flex flex-col gap-6 border-l border-border-subtle pl-6 sm:pl-8">
         {filtered.map((event) => (
           <li key={event.id} className="relative">
             <span
@@ -87,7 +88,7 @@ export function TimelineList({ events }: { events: TimelineEvent[] }) {
             </div>
           </li>
         ))}
-      </ol>
+      </Reveal>
     </div>
   );
 }

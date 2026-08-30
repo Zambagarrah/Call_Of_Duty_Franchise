@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { GamesExplorer } from "@/components/GamesExplorer";
+import { ImageBand } from "@/components/ImageBand";
 import { games, getAllSeries } from "@/data/games";
 
 export const metadata: Metadata = {
@@ -25,6 +26,12 @@ export default function GamesPage() {
       <Container className="py-12 sm:py-16">
         <GamesExplorer games={games} series={series} />
       </Container>
+      <ImageBand
+        image="/images/band-games.jpg"
+        imagePosition="center 25%"
+        eyebrow="55+ releases and counting"
+        quote="Every mainline entry, spin-off, and remaster — one growing catalog."
+      />
     </div>
   );
 }
