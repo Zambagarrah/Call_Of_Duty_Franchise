@@ -89,6 +89,8 @@ export default function HistoryPage() {
         eyebrow="A 20+ year campaign"
         title="The History"
         description="How a single squad-based WWII shooter grew into one of the biggest entertainment franchises in the world — and the studios, reinventions, and corporate changes that got it here."
+        image="/images/hero-history.jpg"
+        imagePosition="center 30%"
       />
 
       <Container className="py-12 sm:py-16">

@@ -19,6 +19,8 @@ export default function GamesPage() {
         eyebrow={`${games.length} titles catalogued`}
         title="The Games"
         description="Every mainline release, spin-off, remaster, and mobile title across the franchise's history. Search, filter by series or type, and sort chronologically."
+        image="/images/hero-games.jpg"
+        imagePosition="center 20%"
       />
       <Container className="py-12 sm:py-16">
         <GamesExplorer games={games} series={series} />

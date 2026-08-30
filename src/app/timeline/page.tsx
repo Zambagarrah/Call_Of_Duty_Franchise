@@ -19,6 +19,8 @@ export default function TimelinePage() {
         eyebrow="2001 – 2025"
         title="The Timeline"
         description="Filter by category to trace releases, studio changes, business milestones, and the growth of competitive Call of Duty side by side."
+        image="/images/hero-timeline.jpg"
+        imagePosition="center 30%"
       />
       <Container className="py-12 sm:py-16">
         <TimelineList events={events} />

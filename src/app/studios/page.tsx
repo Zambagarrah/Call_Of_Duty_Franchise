@@ -17,6 +17,8 @@ export default function StudiosPage() {
         eyebrow={`${studios.length} studios profiled`}
         title="The Studios"
         description="Call of Duty has never been the work of a single team. Meet the lead, support, mobile, and infrastructure studios that build and run the franchise year-round."
+        image="/images/hero-studios.jpg"
+        imagePosition="center 65%"
       />
       <Container className="py-12 sm:py-16">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

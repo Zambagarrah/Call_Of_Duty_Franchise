@@ -19,6 +19,8 @@ export default function FuturePage() {
         eyebrow="Looking ahead"
         title="The Future"
         description="What's confirmed, and what's still just industry chatter. Anything not officially announced by Activision is clearly labeled as a rumor."
+        image="/images/hero-future.jpg"
+        imagePosition="center 25%"
       />
       <Container className="py-12 sm:py-16">
         <div className="mb-8 flex items-start gap-3 rounded-sm border border-amber-600/40 bg-amber-600/10 p-4 text-sm text-amber-200">

@@ -40,6 +40,18 @@ export function Footer() {
             </a>
             .
           </p>
+          <p className="mt-2">
+            Background photography is free-license stock imagery from{" "}
+            <a
+              href="https://www.pexels.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="underline decoration-dotted underline-offset-2 hover:text-foreground"
+            >
+              Pexels
+            </a>{" "}
+            — generic military/tactical photography, not Call of Duty artwork or screenshots.
+          </p>
         </div>
       </Container>
     </footer>

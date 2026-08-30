@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Gamepad2, Building2, Clock, Radar } from "lucide-react";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -18,6 +19,24 @@ export default function Home() {
   return (
     <div>
       <section className="relative overflow-hidden border-b border-border-subtle">
+        <Image
+          src="/images/hero-home.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover", objectPosition: "center 15%" }}
+          className="pointer-events-none absolute inset-0 opacity-50"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,11,8,0.35) 0%, rgba(10,11,8,0.75) 60%, rgba(10,11,8,1) 100%)",
+          }}
+          aria-hidden
+        />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
