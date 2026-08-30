@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { TimelineList } from "@/components/TimelineList";
+import { ImageBand } from "@/components/ImageBand";
 import { getTimelineSorted } from "@/data/timeline";
 
 export const metadata: Metadata = {
@@ -25,6 +26,12 @@ export default function TimelinePage() {
       <Container className="py-12 sm:py-16">
         <TimelineList events={events} />
       </Container>
+      <ImageBand
+        image="/images/band-timeline.jpg"
+        imagePosition="center 45%"
+        eyebrow="Two decades, one throughline"
+        quote="Every release, reinvention, and studio shift — laid out in order."
+      />
     </div>
   );
 }

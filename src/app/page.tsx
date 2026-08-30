@@ -1,10 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Gamepad2, Building2, Clock, Radar } from "lucide-react";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { StatBlock } from "@/components/StatBlock";
 import { GameCard } from "@/components/GameCard";
+import { ExploreCard } from "@/components/ExploreCard";
+import { ImageBand } from "@/components/ImageBand";
+import { ParallaxImage } from "@/components/ParallaxImage";
+import { Reveal } from "@/components/Reveal";
 import { Badge } from "@/components/Badge";
 import { games, getGameBySlug } from "@/data/games";
 import { studios } from "@/data/studios";
@@ -19,15 +22,11 @@ export default function Home() {
   return (
     <div>
       <section className="relative overflow-hidden border-b border-border-subtle">
-        <Image
+        <ParallaxImage
           src="/images/hero-home.jpg"
-          alt=""
-          fill
           priority
-          sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "center 15%" }}
-          className="pointer-events-none absolute inset-0 opacity-50"
-          aria-hidden
+          imagePosition="center 15%"
+          className="opacity-50"
         />
         <div
           className="pointer-events-none absolute inset-0"
@@ -93,7 +92,7 @@ export default function Home() {
             title="Explore the archive"
             description="Four ways into the franchise's story — pick where you want to start."
           />
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <ExploreCard
               href="/history"
               icon={<Clock className="h-5 w-5" aria-hidden />}
@@ -118,9 +117,16 @@ export default function Home() {
               title="Future"
               description="Confirmed live-service plans and clearly-labeled industry rumors."
             />
-          </div>
+          </Reveal>
         </Container>
       </section>
+
+      <ImageBand
+        image="/images/band-home.jpg"
+        imagePosition="center 30%"
+        eyebrow="Two decades of deployments"
+        quote="Every squad, every studio, every era — cataloged in one place."
+      />
 
       <section className="border-t border-border-subtle bg-background-elevated py-16 sm:py-20">
         <Container>
@@ -129,11 +135,11 @@ export default function Home() {
             title="Featured entries"
             description="A cross-section of the franchise's most significant releases."
           />
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((game) => (
               <GameCard key={game.slug} game={game} />
             ))}
-          </div>
+          </Reveal>
         </Container>
       </section>
 
@@ -148,35 +154,5 @@ export default function Home() {
         </Container>
       </section>
     </div>
-  );
-}
-
-function ExploreCard({
-  href,
-  icon,
-  title,
-  description,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group flex flex-col gap-3 rounded-sm border border-border-subtle bg-surface p-5 transition-colors hover:border-accent/50 hover:bg-surface-hover"
-    >
-      <span className="flex h-10 w-10 items-center justify-center rounded-sm border border-border-subtle bg-background-elevated text-muted group-hover:text-accent">
-        {icon}
-      </span>
-      <h3 className="font-display text-lg font-semibold tracking-wide text-foreground uppercase group-hover:text-accent">
-        {title}
-      </h3>
-      <p className="text-sm text-muted">{description}</p>
-      <span className="mt-auto flex items-center gap-1 font-mono text-xs font-semibold tracking-wide text-accent uppercase opacity-0 transition-opacity group-hover:opacity-100">
-        Explore <ArrowRight className="h-3 w-3" aria-hidden />
-      </span>
-    </Link>
   );
 }

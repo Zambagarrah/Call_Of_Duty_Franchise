@@ -1,14 +1,22 @@
+"use client";
+
 import Link from "next/link";
 import { Building2 } from "lucide-react";
 import type { Studio } from "@/data/types";
 import { Badge } from "./Badge";
 import { studioRoleLabel } from "@/lib/utils";
+import { useTilt } from "@/hooks/useTilt";
 
 export function StudioCard({ studio }: { studio: Studio }) {
+  const { ref, onMouseMove, onMouseLeave } = useTilt<HTMLAnchorElement>();
+
   return (
     <Link
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
       href={`/studios/${studio.slug}`}
-      className="group flex flex-col gap-3 rounded-sm border border-border-subtle bg-surface p-5 transition-colors hover:border-accent/50 hover:bg-surface-hover"
+      className="tilt group flex flex-col gap-3 rounded-sm border border-border-subtle bg-surface p-5 transition-colors hover:border-accent/50 hover:bg-surface-hover"
     >
       <div className="flex items-center gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-border-subtle bg-background-elevated text-muted group-hover:text-accent">

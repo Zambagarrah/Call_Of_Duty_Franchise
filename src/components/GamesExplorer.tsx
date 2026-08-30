@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import type { Game, GameType, Series } from "@/data/types";
 import { GameCard } from "./GameCard";
+import { Reveal } from "./Reveal";
 import { cn, typeLabel } from "@/lib/utils";
 
 const ALL_TYPES: GameType[] = [
@@ -122,11 +123,11 @@ export function GamesExplorer({ games, series }: { games: Game[]; series: Series
       </p>
 
       {filtered.length > 0 ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((game) => (
             <GameCard key={game.slug} game={game} />
           ))}
-        </div>
+        </Reveal>
       ) : (
         <div className="rounded-sm border border-dashed border-border-subtle p-10 text-center text-sm text-muted">
           No titles match your filters. Try clearing the search or picking a different series.
