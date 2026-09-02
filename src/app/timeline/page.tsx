@@ -13,11 +13,13 @@ export const metadata: Metadata = {
 
 export default function TimelinePage() {
   const events = getTimelineSorted();
+  const years = events.map((event) => event.year);
+  const yearRange = `${Math.min(...years)} – ${Math.max(...years)}`;
 
   return (
     <div>
       <PageHero
-        eyebrow="2001 – 2025"
+        eyebrow={yearRange}
         title="The Timeline"
         description="Filter by category to trace releases, studio changes, business milestones, and the growth of competitive Call of Duty side by side."
         image="/images/hero-timeline.jpg"

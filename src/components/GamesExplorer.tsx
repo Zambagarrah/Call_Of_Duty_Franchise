@@ -54,11 +54,13 @@ export function GamesExplorer({ games, series }: { games: Game[]; series: Series
             aria-hidden
           />
           <input
-            type="text"
+            type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search games or developers…"
-            className="w-full rounded-sm border border-border-subtle bg-background-elevated py-2 pr-3 pl-9 text-sm text-foreground placeholder:text-muted/60 focus:border-accent focus:outline-none"
+            aria-label="Search games or developers"
+            autoComplete="off"
+            className="w-full rounded-sm border border-border-subtle bg-background-elevated py-2 pr-3 pl-9 text-sm text-foreground placeholder:text-muted/60 focus-visible:border-accent"
           />
         </div>
 
@@ -66,7 +68,8 @@ export function GamesExplorer({ games, series }: { games: Game[]; series: Series
           <select
             value={activeType}
             onChange={(e) => setActiveType(e.target.value as GameType | "All")}
-            className="rounded-sm border border-border-subtle bg-background-elevated px-3 py-2 font-mono text-xs tracking-wide text-foreground uppercase focus:border-accent focus:outline-none"
+            aria-label="Filter by type"
+            className="rounded-sm border border-border-subtle bg-background-elevated px-3 py-2 font-mono text-xs tracking-wide text-foreground uppercase focus-visible:border-accent"
           >
             <option value="All">All types</option>
             {ALL_TYPES.map((type) => (
@@ -79,7 +82,8 @@ export function GamesExplorer({ games, series }: { games: Game[]; series: Series
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value as typeof sort)}
-            className="rounded-sm border border-border-subtle bg-background-elevated px-3 py-2 font-mono text-xs tracking-wide text-foreground uppercase focus:border-accent focus:outline-none"
+            aria-label="Sort order"
+            className="rounded-sm border border-border-subtle bg-background-elevated px-3 py-2 font-mono text-xs tracking-wide text-foreground uppercase focus-visible:border-accent"
           >
             <option value="newest">Newest first</option>
             <option value="oldest">Oldest first</option>

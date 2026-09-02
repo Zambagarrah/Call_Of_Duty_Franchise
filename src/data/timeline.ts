@@ -78,7 +78,7 @@ export const timeline: TimelineEvent[] = [
     title: "Modern Warfare 2 breaks sales records",
     category: "release",
     description:
-      "The sequel becomes one of the best-selling entertainment products of its generation, while its 'No Russian' mission sparks a public debate about violence in games.",
+      "The sequel becomes one of the best-selling entertainment products of its generation, while its ‘No Russian’ mission sparks a public debate about violence in games.",
     relatedGameSlug: "modern-warfare-2",
   },
   {

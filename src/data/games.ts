@@ -265,7 +265,7 @@ export const games: Game[] = [
       "One of the best-selling games of its console generation, expanding the Modern Warfare story into a globe-spanning, higher-stakes sequel.",
     description: [
       "Modern Warfare 2 continued the story of Captain Price and Soap MacTavish while introducing fan-favorite character Simon 'Ghost' Riley, and set commercial records for entertainment media at the time of release.",
-      "Its campaign also included the deliberately disturbing 'No Russian' airport sequence, which sparked widespread public debate about violence and player choice in games.",
+      "Its campaign also included the deliberately disturbing ‘No Russian’ airport sequence, which sparked widespread public debate about violence and player choice in games.",
       "Multiplayer expanded killstreaks into higher-tier rewards like the AC-130, cementing the run-and-gun, reward-chasing pace that defined the era.",
     ],
     notableFeatures: [

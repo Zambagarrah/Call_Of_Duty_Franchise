@@ -33,7 +33,7 @@ export function ExploreCard({
         {title}
       </h3>
       <p className="text-sm text-muted">{description}</p>
-      <span className="mt-auto flex items-center gap-1 font-mono text-xs font-semibold tracking-wide text-accent uppercase opacity-0 transition-opacity group-hover:opacity-100">
+      <span className="mt-auto flex items-center gap-1 font-mono text-xs font-semibold tracking-wide text-accent uppercase opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
         Explore <ArrowRight className="h-3 w-3" aria-hidden />
       </span>
     </Link>
