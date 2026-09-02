@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import { withBasePath } from "@/lib/site";
 
 interface ParallaxImageProps {
   src: string;
@@ -71,7 +72,7 @@ export function ParallaxImage({
     >
       <div ref={imgWrapRef} className="absolute inset-0 will-change-transform">
         <Image
-          src={src}
+          src={withBasePath(src)}
           alt={alt}
           fill
           priority={priority}

@@ -3,6 +3,9 @@ import { games } from "@/data/games";
 import { studios } from "@/data/studios";
 import { SITE_URL } from "@/lib/site";
 
+// Required for static export (GitHub Pages) — this route reads no request data.
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE_URL, changeFrequency: "weekly", priority: 1 },
