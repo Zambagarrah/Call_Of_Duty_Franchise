@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Gamepad2 } from "lucide-react";
@@ -6,6 +7,7 @@ import { Container } from "@/components/Container";
 import { Badge } from "@/components/Badge";
 import { games, getGameBySlug } from "@/data/games";
 import { cn, seriesBadgeClasses, typeLabel } from "@/lib/utils";
+import { withBasePath } from "@/lib/site";
 
 export function generateStaticParams() {
   return games.map((game) => ({ slug: game.slug }));
@@ -70,8 +72,19 @@ export default async function GameDetailPage({
 
       <Container className="grid grid-cols-1 gap-10 py-12 sm:py-16 lg:grid-cols-[2fr_1fr]">
         <div className="flex flex-col gap-6">
-          <div className="flex h-40 items-center justify-center rounded-sm border border-border-subtle bg-surface">
-            <Gamepad2 className="h-10 w-10 text-muted/40" aria-hidden />
+          <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-sm border border-border-subtle bg-surface">
+            {game.coverImage ? (
+              <Image
+                src={withBasePath(game.coverImage)}
+                alt={`${game.title} key art`}
+                fill
+                sizes="(min-width: 1024px) 66vw, 100vw"
+                className="object-cover"
+                priority
+              />
+            ) : (
+              <Gamepad2 className="h-10 w-10 text-muted/40" aria-hidden />
+            )}
           </div>
 
           <div className="flex flex-col gap-4">

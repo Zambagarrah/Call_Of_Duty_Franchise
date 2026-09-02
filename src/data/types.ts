@@ -41,6 +41,8 @@ export interface Game {
   notableFeatures: string[];
   predecessorSlug?: string;
   successorSlug?: string;
+  /** Optional key art / cover photo, relative to /public (e.g. "/images/games/foo.jpg"). */
+  coverImage?: string;
 }
 
 export type StudioRole =

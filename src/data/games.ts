@@ -275,6 +275,7 @@ export const games: Game[] = [
     ],
     predecessorSlug: "world-at-war",
     successorSlug: "black-ops",
+    coverImage: "/images/games/modern-warfare-2-cover.jpg",
   },
   {
     slug: "modern-warfare-mobilized",
@@ -350,6 +351,7 @@ export const games: Game[] = [
     ],
     predecessorSlug: "black-ops",
     successorSlug: "black-ops-2",
+    coverImage: "/images/games/modern-warfare-3-cover.jpg",
   },
   {
     slug: "black-ops-2",
@@ -696,6 +698,7 @@ export const games: Game[] = [
     ],
     predecessorSlug: "black-ops-4",
     successorSlug: "black-ops-cold-war",
+    coverImage: "/images/games/modern-warfare-2019-cover.jpg",
   },
   {
     slug: "modern-warfare-2-campaign-remastered",
@@ -821,6 +824,7 @@ export const games: Game[] = [
     ],
     predecessorSlug: "vanguard",
     successorSlug: "modern-warfare-iii-2023",
+    coverImage: "/images/games/modern-warfare-ii-2022-cover.jpg",
   },
   {
     slug: "modern-warfare-iii-2023",
@@ -847,6 +851,7 @@ export const games: Game[] = [
     ],
     predecessorSlug: "modern-warfare-ii-2022",
     successorSlug: "black-ops-6",
+    coverImage: "/images/games/modern-warfare-iii-2023-cover.jpg",
   },
   {
     slug: "black-ops-6",
