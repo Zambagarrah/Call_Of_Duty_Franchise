@@ -304,6 +304,15 @@ export const timeline: TimelineEvent[] = [
       "David Mason's story continues in 2035, alongside the franchise's largest round-based Zombies offering yet and a new large-scale Endgame mode.",
     relatedGameSlug: "black-ops-7",
   },
+  {
+    id: "reveal-mw4",
+    year: 2026,
+    date: "May 28, 2026",
+    title: "Modern Warfare 4 revealed as a franchise reset",
+    category: "business",
+    description:
+      "Infinity Ward officially unveils Call of Duty: Modern Warfare 4, positioning it as a technological and creative reset with a rebuilt engine, current-gen-only support, and no carried-over cosmetics — due October 23, 2026.",
+  },
 ];
 
 export function getTimelineSorted(): TimelineEvent[] {
