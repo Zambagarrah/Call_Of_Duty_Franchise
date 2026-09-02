@@ -26,9 +26,16 @@ disclaimer.
   from its 2003 WWII origins to the current live-service period.
 - **Future** — confirmed live-service plans alongside clearly labeled,
   unconfirmed industry rumors about upcoming titles.
+- **Subtle motion** — scroll-triggered reveals, a pointer-tracked 3D card tilt,
+  and parallax image bands, all dependency-free and disabled under
+  `prefers-reduced-motion`.
+- **SEO & sharing** — a generated sitemap, `robots.txt`, PWA manifest, custom
+  favicon/app icons, and a generated Open Graph/Twitter card image.
 
-All artwork is intentionally text/placeholder-only (no copyrighted box art or
-logos) to keep this a safe, original fan reference.
+No copyrighted box art, screenshots, or official logos are used. Background
+photography is free-license stock imagery (Pexels and Openverse), depicting
+generic military/tactical scenes rather than any Call of Duty artwork — see
+the in-app footer for full credits.
 
 ## Getting Started
 

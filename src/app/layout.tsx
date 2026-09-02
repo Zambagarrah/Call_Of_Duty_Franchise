@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Oswald, Inter, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const displayFont = Oswald({
@@ -21,12 +22,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "The Archive — An Unofficial Call of Duty Franchise Reference",
+    default: SITE_TITLE,
     template: "%s — The Archive",
   },
-  description:
-    "An unofficial, fan-made reference covering the history, games, studios, and future of the Call of Duty franchise.",
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "Call of Duty",
+    "Call of Duty history",
+    "Call of Duty games",
+    "Call of Duty timeline",
+    "Call of Duty studios",
+    "Infinity Ward",
+    "Treyarch",
+    "Sledgehammer Games",
+    "CoD franchise fan site",
+  ],
+  authors: [{ name: SITE_NAME }],
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
