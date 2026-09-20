@@ -49,7 +49,7 @@ export default function Home() {
             <p className="mb-4 font-mono text-xs font-semibold tracking-[0.3em] text-accent uppercase">
               Unofficial fan archive · est. 2003
             </p>
-            <h1 className="font-display text-5xl leading-[1.05] font-bold tracking-wide text-foreground uppercase text-shadow-glow sm:text-6xl lg:text-7xl">
+            <h1 className="font-stencil text-5xl leading-[1.05] tracking-wide text-foreground uppercase text-shadow-glow sm:text-6xl lg:text-7xl">
               Every deployment.
               <br />
               <span className="text-accent">Every era.</span>
