@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Oswald, Inter, Geist_Mono } from "next/font/google";
+import { Oswald, Inter, Geist_Mono, Black_Ops_One } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
@@ -18,6 +18,14 @@ const bodyFont = Inter({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+// Distressed military stencil face reserved for the wordmark and hero
+// headline — a deliberate accent, not a wholesale swap for `displayFont`.
+const stencilFont = Black_Ops_One({
+  variable: "--font-stencil",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -63,7 +71,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${bodyFont.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${geistMono.variable} ${stencilFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <a href="#main" className="skip-link">
